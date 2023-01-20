@@ -1,9 +1,10 @@
-SecAddr, DotsAddr = input(), input()
-with open(SecAddr, 'r') as sec:
+import sys
+
+with open(sys.argv[1], 'r') as sec:
     ox, oy = [float(i) for i in sec.readline().strip().split()]
     r=float(sec.readline())
 
-with open(DotsAddr, 'r') as dots:
+with open(sys.argv[2], 'r') as dots:
     dots = dots.readlines()
     
 for i in dots:

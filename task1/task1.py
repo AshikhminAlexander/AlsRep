@@ -1,4 +1,5 @@
-n, m = [int(i) for i in input().split()]
+import sys
+n, m = int(sys.argv[1]), int(sys.argv[2])
 way = [1]                                      
 while 1:
     way.append((way[-1] + m - 1) % n)
@@ -7,4 +8,4 @@ while 1:
     if way[-1] == 1:
         way.pop()
         break
-print(*way, sep='')   
+print(*way, sep='')

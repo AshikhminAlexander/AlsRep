@@ -1,13 +1,11 @@
 import json
+import sys
 
-ValuesAddr, TestsAddr = input(), input()
-
-with open(ValuesAddr, 'r') as values:
-    values = json.load(values)['values']
-
-
-with open(TestsAddr, 'r') as tests:
+with open(sys.argv[1], 'r') as tests:
     tests = json.load(tests)
+    
+with open(sys.argv[2], 'r') as values:
+    values = json.load(values)['values']
 
 # Func that searches and returns particular test value (or '') based on test id, then removes that test data from list
 
