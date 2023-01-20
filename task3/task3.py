@@ -9,7 +9,7 @@ with open(sys.argv[2], 'r') as values:
 
 # Func that searches and returns particular test value (or '') based on test id, then removes that test data from list
 
-def ValuesSearch(id):
+def values_search(id):
     for i in range(len(values)):
         if 'id' in values[i] and values[i]['id'] == id:
             value = values[i]['value']
@@ -20,13 +20,13 @@ def ValuesSearch(id):
     
 # Func that scans tests tree and updates values
 
-def TestsSearchUpdate(data):
+def tests_search_update(data):
     for j in data:
         if 'id' in j:
-            j['value'] = ValuesSearch(j['id'])
+            j['value'] = values_search(j['id'])
         if 'values' in j:
-            TestsSearchUpdate(j['values'])
+            tests_search_update(j['values'])
             
-TestsSearchUpdate(tests['tests'])
+tests_search_update(tests['tests'])
 with open('report.json', 'w') as outfile:
     json.dump(tests, outfile)
