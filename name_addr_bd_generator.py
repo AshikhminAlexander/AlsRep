@@ -141,54 +141,7 @@ for i in range(20):
     
 
 
-# In[ ]:
 
-
-for i in range(100):
-    gen=random.choice([
-        [male_names_dict, male_father_names_dict, male_family_names_dict], 
-        [female_names_dict, female_father_names_dict, female_family_names_dict]])
-    
-    name =random.choice(gen[2]) + ' ' + random.choice(gen[0]) + ' ' + random.choice(gen[1])
-    city = random.choice(city_dict)
-    
-    street = random.choice(strt_dict)
-    for i in ('Село', 'Деревня', 'Поселок', 'поселок', 'Хутор', 'Станица'):        
-        if i in city:
-            house = 'дом номер ' + str(random.randint(1,100)) +' '
-            break
-    else:
-        house = 'дом номер ' + str(random.randint(1,100)) +' квартира '+ str(random.randint(1,100))
-        
-    
-    print( name, street, house, city)
-
-
-# In[ ]:
-
-
-
-
-
-# In[ ]:
-
-
-
-
-
-# In[11]:
-
-
-
-
-
-# In[ ]:
-
-
-
-
-
-# In[ ]:
 
 
 
